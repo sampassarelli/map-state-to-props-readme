@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+////////// Sam ADDED //////////
+import { connect } from 'react-redux'; /* code change */
+
 
 class App extends Component {
 
@@ -21,4 +24,9 @@ class App extends Component {
   }
 };
 
-export default App;
+////////// Sam ADDED //////////
+const mapStateToProps = (state) => {
+  return { items: state.items };
+};
+
+export default connect(mapStateToProps)(App);
